@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Turbo Racer 3D</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="loading-screen">
+            <h1 id="game-title">TURBO RACER 3D</h1>
+            <div id="loading-progress">
+                <div id="loading-bar"></div>
+            </div>
+            <div id="loading-text">Initializing game...</div>
+        </div>
+        
+        <div id="main-menu">
+            <h1 id="game-title">TURBO RACER 3D</h1>
+            
+            <div class="track-selector">
+                <div class="track-option selected" data-track="0">
+                    <div class="track-preview"></div>
+                    <p>Circuit City</p>
+                </div>
+                <div class="track-option" data-track="1">
+                    <div class="track-preview"></div>
+                    <p>Mountain Pass</p>
+                </div>
+                <div class="track-option" data-track="2">
+                    <div class="track-preview"></div>
+                    <p>Desert Drift</p>
+                </div>
+            </div>
+            
+            <div id="car-selector">
+                <div class="car-option selected" data-car="0">
+                    <div class="car-preview"></div>
+                    <p>Speeder</p>
+                </div>
+                <div class="car-option" data-car="1">
+                    <div class="car-preview"></div>
+                    <p>Racer</p>
+                </div>
+                <div class="car-option" data-car="2">
+                    <div class="car-preview"></div>
+                    <p>Muscle</p>
+                </div>
+            </div>
+            
+            <button id="start-game-btn" class="menu-btn">Start Race</button>
+            <button id="options-btn" class="menu-btn">Options</button>
+        </div>
+        
+        <div id="hud">
+            <div id="pause-btn"></div>
+            
+            <div id="speed-container">
+                <div id="speed-value">0</div>
+                <div id="speed-unit">KM/H</div>
+            </div>
+            
+            <div id="timer-container">
+                <div id="timer">00:00.000</div>
+                <div id="lap-count">LAP 0/3</div>
+            </div>
+            
+            <div id="position-container">
+                <div id="position">1ST</div>
+            </div>
+            
+            <div id="boost-container">
+                <div id="boost-label">BOOST</div>
+                <div id="boost-bar"></div>
+            </div>
+            
+            <div id="minimap-container">
+                <canvas id="minimap"></canvas>
+            </div>
+            
+            <div class="control-instructions">
+                WASD or Arrow Keys to drive | SPACE for Boost | SHIFT for Brake
+            </div>
+            
+            <div id="mobile-controls">
+                <div id="accelerate-btn" class="control-btn">⬆️</div>
+                <div id="brake-btn" class="control-btn">⬇️</div>
+                <div id="left-btn" class="control-btn">⬅️</div>
+                <div id="right-btn" class="control-btn">➡️</div>
+                <div id="boost-btn" class="control-btn">🔥</div>
+            </div>
+        </div>
+        
+        <div id="countdown"></div>
+        
+        <div id="weather-effects">
+            <div id="rain-container"></div>
+        </div>
+        
+        <div id="race-results">
+            <h2 id="results-title">Race Complete!</h2>
+            
+            <div id="results-details">
+                <div id="result-position">1ST PLACE</div>
+                
+                <div class="result-row">
+                    <span class="result-label">Best Lap Time:</span>
+                    <span class="result-value" id="result-best-lap">01:23.456</span>
+                </div>
+                
+                <div class="result-row">
+                    <span class="result-label">Total Race Time:</span>
+                    <span class="result-value" id="result-total-time">04:12.789</span>
+                </div>
+                
+                <div class="result-row">
+                    <span class="result-label">Top Speed:</span>
+                    <span class="result-value" id="result-top-speed">210 KM/H</span>
+                </div>
+            </div>
+            
+            <div id="result-buttons">
+                <button id="restart-btn" class="menu-btn">Restart Race</button>
+                <button id="menu-btn" class="menu-btn">Main Menu</button>
+            </div>
+        </div>
+        
+        <div id="pause-menu">
+            <h2 id="pause-title">Paused</h2>
+            
+            <button id="resume-btn" class="menu-btn">Resume Race</button>
+            <button id="restart-pause-btn" class="menu-btn">Restart Race</button>
+            <button id="menu-pause-btn" class="menu-btn">Main Menu</button>
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script> 
+       
+</body>
+</html>
